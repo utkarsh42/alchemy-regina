@@ -47,7 +47,7 @@ app.get('/', example);
 var port = process.env.PORT || 3000;
 server.listen(port, function(){
 	console.log('Express server listening on port ' + port);
-	console.log('To view the example, point your favorite browser to: localhost:3000'); 
+	console.log('To view the example, point your favorite browser to: localhost:3000');
 });
 
 
@@ -188,4 +188,3 @@ function image_keywords(req, res, output) {
 		res.render('example',output);
 	});
 }
-
