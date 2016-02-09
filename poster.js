@@ -7,15 +7,16 @@ var poster = function(id, output)
 console.log("sending post request with message ");
 var labels = output.taxonomy.taxonomy;
 var labelStr = "";
+if(labels !== undefined)
+{
+  for (var i = 0, len = labels.length; i < len; i++) {
 
-for (var i = 0, len = labels.length; i < len; i++) {
+    console.log(labels[i]);
 
-  console.log(labels[i]);
-
-  labelStr = labelStr+","+labels[i].label;
+    labelStr = labelStr+","+labels[i].label;
+  }
+  console.log(labelStr.slice(1));
 }
-console.log(labelStr.slice(1));
-
   var putUrl = 'https://regina.stamplayapp.com/api/cobject/v1/knowledgeobject/'+id;
 request({
     url: putUrl, //URL to hit
